@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>es.enekodiaz.app-template.viper</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.coreDataCocoaTouchApplication</string>
+		<string>com.apple.dt.unit.sceneLifecycleApplication</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>A project already configured to use Viper file templates.</string>
+	<key>SortOrder</key>
+	<integer>1</integer>
+	<key>NameOfInitialFileForEditor</key>
+	<string>ContentView.swift</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Swift</key>
+				<array>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>userInterface</key>
+							<string>SwiftUI</string>
+							<key>appLifecycle</key>
+							<string>Cocoa</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>SceneDelegate.swift:imports:importSwiftUI</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body:windowScene</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body</key>
+							<string>
+// Create the SwiftUI view that provides the window contents.
+let contentView = ContentView()
+</string>
+							<key>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body:windowScene</key>
+							<string>
+// Use a UIHostingController as window root view controller.
+if let windowScene = scene as? UIWindowScene {
+    let window = UIWindow(windowScene: windowScene)
+    window.rootViewController = UIHostingController(rootView: contentView)
+    self.window = window
+    window.makeKeyAndVisible()
+}</string>
+							<key>*:imports:importSwiftUI</key>
+							<string>import SwiftUI</string>
+						</dict>
+						<key>Targets</key>
+						<array>
+							<dict>
+								<key>SharedSettings</key>
+								<dict>
+									<key>ENABLE_PREVIEWS</key>
+									<string>YES</string>
+									<key>DEVELOPMENT_ASSET_PATHS</key>
+									<string>___PACKAGENAMEPREVIEWCONTENT:quoteIfNeeded___</string>
+								</dict>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>userInterface</key>
+							<string>SwiftUI</string>
+							<key>coreData</key>
+							<string>true</string>
+							<key>appLifecycle</key>
+							<string>Cocoa</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body</key>
+							<string>
+// Get the managed object context from the shared persistent container.
+let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+// Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
+// Add `@Environment(\.managedObjectContext)` in the views that will need the context.
+let contentView = ContentView().environment(\.managedObjectContext, context)
+</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>userInterface</string>
+			<key>Name</key>
+			<string>Interface:</string>
+			<key>Description</key>
+			<string>The type of user interface.</string>
+			<key>Units</key>
+			<dict>
+				<key>SwiftUI</key>
+				<array>
+					<dict>
+						<key>Nodes</key>
+						<array>
+							<string>Shared/Extensions/String+Extensions.swift</string>
+							<string>Shared/Extensions/UIView+Extensions.swift</string>
+							<string>Shared/Extensions/UIViewController+Extensions.swift</string>
+							<string>Shared/Extensions/View+Extensions.swift</string>
+							<string>Shared/Helpers/SwiftUIViewController.swift</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>Shared/Extensions/String+Extensions.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>Shared/Extensions/String+Extensions.swift</string>
+								<key>Group</key>
+								<array>
+									<string>Shared</string>
+									<string>Extensions</string>
+								</array>
+							</dict>
+							<key>Shared/Extensions/UIView+Extensions.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>Shared/Extensions/UIView+Extensions.swift</string>
+								<key>Group</key>
+								<array>
+									<string>Shared</string>
+									<string>Extensions</string>
+								</array>
+							</dict>
+							<key>Shared/Extensions/UIViewController+Extensions.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>Shared/Extensions/UIViewController+Extensions.swift</string>
+								<key>Group</key>
+								<array>
+									<string>Shared</string>
+									<string>Extensions</string>
+								</array>
+							</dict>
+							<key>Shared/Extensions/View+Extensions.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>Shared/Extensions/View+Extensions.swift</string>
+								<key>Group</key>
+								<array>
+									<string>Shared</string>
+									<string>Extensions</string>
+								</array>
+							</dict>
+							<key>Shared/Helpers/SwiftUIViewController.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>Shared/Helpers/SwiftUIViewController.swift</string>
+								<key>Group</key>
+								<array>
+									<string>Shared</string>
+									<string>Helpers</string>
+								</array>
+							</dict>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Default</key>
+			<string>SwiftUI</string>
+			<key>Type</key>
+			<string>popup</string>
+		</dict>
+	</array>
+	<key>Image</key>
+	<dict>
+		<key>BundleImageName</key>
+		<string>app</string>
+		<key>BundleIdentifier</key>
+		<string>com.apple.dt.IDEKit</string>
+	</dict>
+</dict>
+</plist>
